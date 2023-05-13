@@ -26,7 +26,13 @@ if status is-interactive
     fish_vi_key_bindings --no-erase insert
   end
 
+  # Force the cursor to be set above
   set -g fish_vi_force_cursor 1
+
+  # Set the editor to be Neovim, duh
+  set -gx EDITOR nvim
+  # Use Wezterm :D
+  set -gx TERM wezterm
 end
 
 starship init fish | source
