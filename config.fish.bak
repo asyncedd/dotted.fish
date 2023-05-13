@@ -1,7 +1,5 @@
 #!/usr/bin/env fish
 
-fish_config theme choose "Catppuccin Mocha" # Set the theme to some Catppuccin ☕
-
 # Check if starship is installed
 if not type -q starship
   # Starship is not installed, so download and install it
