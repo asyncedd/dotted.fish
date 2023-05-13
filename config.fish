@@ -33,6 +33,14 @@ if status is-interactive
   set -gx EDITOR nvim
   # Use Wezterm :D
   set -gx TERM wezterm
+
+  if type -q vivid
+    if test "$APPEARANCE" = light
+      set -gx LS_COLORS (vivid generate catppuccin-latte)
+    else
+      set -gx LS_COLORS (vivid generate catppuccin-mocha)
+    end
+  end
 end
 
 starship init fish | source
