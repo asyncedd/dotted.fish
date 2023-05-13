@@ -10,6 +10,23 @@ if not type -q starship
   # Note: The --yes option automatically installs starship without prompting for confirmation
 end
 
-fish_vi_key_bindings
+# Only run this in interactive shells
+if status is-interactive
+
+  # fish_vi_key_bindings
+  # Set the cursor shapes for the different vi modes.
+  set fish_cursor_default block blink
+  set fish_cursor_insert line blink
+  set fish_cursor_replace_one underscore blink
+  set fish_cursor_visual block
+
+  function fish_user_key_bindings
+    # Execute this once per mode that emacs bindings should be used in
+    fish_default_key_bindings -M insert
+    fish_vi_key_bindings --no-erase insert
+  end
+
+  set -g fish_vi_force_cursor 1
+end
 
 starship init fish | source
