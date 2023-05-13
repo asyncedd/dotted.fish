@@ -10,4 +10,6 @@ if not type -q starship
   # Note: The --yes option automatically installs starship without prompting for confirmation
 end
 
+fish_vi_key_bindings
+
 starship init fish | source
