@@ -41,6 +41,18 @@ if status is-interactive
       set -gx LS_COLORS (vivid generate catppuccin-mocha)
     end
   end
+
+  # automatically ls on cd
+  if ! type -q _standard_cd
+    functions --copy cd _standard_cd
+    function cd
+      _standard_cd $argv && ls
+    end
+  end
+
+  function ls
+    lsd $argv
+  end
 end
 
 starship init fish | source
