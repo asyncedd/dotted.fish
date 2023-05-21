@@ -2,12 +2,26 @@
 
 fish_config theme choose "Catppuccin Mocha" # Set the theme to some Catppuccin ☕
 
+set -x PATH /home/async/.local/bin $PATH
+
 # Check if starship is installed
 if not type -q starship
   # Starship is not installed, so download and install it
   echo "Starship is not installed. Installing..."
   curl -sS https://starship.rs/install.sh | sh
-  # Note: The --yes option automatically installs starship without prompting for confirmation
+end
+
+if not type -q zoxide
+  # If Zoxide isn't installed, curl it.
+  echo "Zoxide isn't installed. Installing..."
+  curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+  # For now, we won't need parallel curling since, it's only two plugins 😂
+end
+
+if not type -q fzf
+  echo "fzf isn't installed. Installing..."
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
 end
 
 # Only run this in interactive shells
