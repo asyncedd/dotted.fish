@@ -45,8 +45,6 @@ if status is-interactive
 
   # Set the editor to be Neovim, duh
   set -gx EDITOR nvim
-  # Use Wezterm :D
-  set -gx TERM wezterm
 
   if type -q vivid
     if test "$APPEARANCE" = light
