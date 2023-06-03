@@ -18,6 +18,7 @@ My [Fish](https://fishshell.com/) config.
 
 - [Vivid](https://github.com/sharkdp/vivid)
 - [LSD](https://github.com/lsd-rs/lsd)
+- [Nitch](https://github.com/ssleert/nitch#installation-%EF%B8%8F)
 
 ## 🍻 What you **SHOULD** install yourself
 

@@ -70,4 +70,6 @@ if status is-interactive
     end
 end
 
+nitch
+
 starship init fish | source
